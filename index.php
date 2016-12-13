@@ -69,10 +69,7 @@ echo "Wrong Username / Password, please check your information!";
 								<div class="panel-footer" id="e_msg">
 									<!-- DO wrong password/username message -->
 								</div>
-<<<<<<< HEAD
 								<div class="panel-footer" id="e_msg"></div>
-=======
->>>>>>> origin/master
 							</div>
 						</div>
 					</ul>

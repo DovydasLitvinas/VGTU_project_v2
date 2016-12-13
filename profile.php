@@ -68,10 +68,6 @@ if(!isset($_SESSION["uid"])){
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>
 				</li>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 			</ul>
 		</div>
 	</div>
