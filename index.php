@@ -66,6 +66,10 @@ if(isset($_SESSION["uid"])){
 								<div class="panel-footer" id="e_msg">
 									<!-- DO wrong password/username message -->
 								</div>
+<<<<<<< HEAD
+								<div class="panel-footer" id="e_msg"></div>
+=======
+>>>>>>> origin/master
 							</div>
 						</div>
 					</ul>
