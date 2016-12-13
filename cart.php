@@ -9,7 +9,7 @@ if(!isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Cart</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -17,7 +17,7 @@ if(!isset($_SESSION["uid"])){
 	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
 					<span class="sr-only">navigation</span>
@@ -25,12 +25,12 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Khan Store</a>
+				<a href="#" class="navbar-brand">E-Shop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span>Product</a></li>
 			</ul>
 		</div>
 	</div>
@@ -42,7 +42,7 @@ if(!isset($_SESSION["uid"])){
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8" id="cart_msg">
-				<!--Cart Message--> 
+				<!--Cart Message-->
 			</div>
 			<div class="col-md-2"></div>
 		</div>
@@ -60,6 +60,8 @@ if(!isset($_SESSION["uid"])){
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
 							<div class="col-md-2 col-xs-2"><b>Price in $</b></div>
 						</div>
+						<br>
+						<br>
 						<div id="cart_checkout"></div>
 						<!--<div class="row">
 							<div class="col-md-2">
@@ -79,30 +81,13 @@ if(!isset($_SESSION["uid"])){
 							<div class="col-md-4">
 								<b>Total $500000</b>
 							</div> -->
-						</div> 
+						</div>
 					</div>
 					<div class="panel-footer"></div>
 				</div>
 			</div>
 			<div class="col-md-2"></div>
-			
+
 		</div>
-</body>	
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		

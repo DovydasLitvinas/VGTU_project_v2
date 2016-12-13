@@ -12,7 +12,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="index.php" class="navbar-brand">Parduotuvė</a>
+				<a href="index.php" class="navbar-brand">E-Shop</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"> Home </a></li>
@@ -59,7 +59,7 @@
 						<br>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="password">password</label>
+								<label for="password">Password</label>
 								<input type="password" id="password" name="password"class="form-control">
 							</div>
 						</div>

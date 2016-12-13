@@ -261,7 +261,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 				  <input type="hidden" name="cmd" value="_cart">
-				  <input type="hidden" name="business" value="shoppingcart@khanstore.com">
+				  <input type="hidden" name="business" value="shoppingcart@vgtustore.com">
 				  <input type="hidden" name="upload" value="1">';
 
 				  $x=0;
@@ -309,7 +309,7 @@ if(isset($_POST["removeFromCart"])){
 		echo "
 			<div class='alert alert-danger'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Product is Removed from Cart Continue Shopping..!</b>
+				<b>Product is removed from Cart Continue Shopping!</b>
 			</div>
 		";
 	}
