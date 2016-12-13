@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "khanstore";
+$db = "vgtu_project_db";
 
 // Create connection
 $con = mysqli_connect($servername, $username, $password,$db);

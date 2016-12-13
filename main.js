@@ -9,7 +9,7 @@ $(document).ready(function(){
 			data	:	{category:1},
 			success	:	function(data){
 				$("#get_category").html(data);
-				
+
 			}
 		})
 	}
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		$("#get_product").html("<h3>Loading...</h3>");
 		event.preventDefault();
 		var cid = $(this).attr('cid');
-		
+
 			$.ajax({
 			url		:	"action.php",
 			method	:	"POST",
@@ -49,13 +49,13 @@ $(document).ready(function(){
 				}
 			}
 		})
-	
+
 	})
 	$("body").delegate(".selectBrand","click",function(event){
 		event.preventDefault();
 		$("#get_product").html("<h3>Loading...</h3>");
 		var bid = $(this).attr('bid');
-		
+
 			$.ajax({
 			url		:	"action.php",
 			method	:	"POST",
@@ -67,7 +67,7 @@ $(document).ready(function(){
 				}
 			}
 		})
-	
+
 	})
 	$("#search_btn").click(function(){
 		$("#get_product").html("<h3>Loading...</h3>");
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			url		:	"action.php",
 			method	:	"POST",
 			data	:	{search:1,keyword:keyword},
-			success	:	function(data){ 
+			success	:	function(data){
 				$("#get_product").html(data);
 				if($("body").width() < 480){
 					$("body").scrollTop(683);
@@ -92,11 +92,11 @@ $(document).ready(function(){
 			url		:	"register.php",
 			method	:	"POST",
 			data	:	$("form").serialize(),
-			success	:	function(data){ 
+			success	:	function(data){
 				$("#signup_msg").html(data);
 			}
 		})
-		
+
 	})
 	$("#login").click(function(event){
 		event.preventDefault();
@@ -110,6 +110,9 @@ $(document).ready(function(){
 				if(data == "truefsvkjbskvvsbd"){
 					window.location.href = "profile.php";
 				}
+				//else {
+					$("#e_msg").html(data);
+				//}
 			}
 		})
 	})
@@ -137,7 +140,7 @@ $(document).ready(function(){
 				$("#cart_product").html(data);
 			}
 		})
-		
+
 	};
 	function cart_count(){
 		$.ajax({
@@ -149,7 +152,7 @@ $(document).ready(function(){
 			}
 		})
 	}
-	
+
 	$("#cart_container").click(function(event){
 		event.preventDefault();
 		$.ajax({
@@ -160,7 +163,7 @@ $(document).ready(function(){
 				$("#cart_product").html(data);
 			}
 		})
-		
+
 	})
 	cart_checkout();
 	function cart_checkout(){
@@ -232,23 +235,3 @@ $(document).ready(function(){
 		})
 	})
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

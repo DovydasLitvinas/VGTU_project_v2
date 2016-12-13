@@ -77,7 +77,7 @@ if(isset($_POST["getProduct"])){
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
-						</div>	
+						</div>
 			";
 		}
 	}
@@ -93,7 +93,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		$keyword = $_POST["keyword"];
 		$sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";
 	}
-	
+
 	$run_query = mysqli_query($con,$sql);
 	while($row=mysqli_fetch_array($run_query)){
 			$pro_id    = $row['product_id'];
@@ -113,13 +113,13 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 								</div>
 							</div>
-						</div>	
+						</div>
 			";
 		}
 	}
-									
+
 	if(isset($_POST["addToProduct"])){
-		
+
 		if(isset($_SESSION["uid"])){
 			$p_id = $_POST["proId"];
 		$user_id = $_SESSION["uid"];
@@ -130,9 +130,9 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			echo "
 				<div class='alert alert-warning'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is already added into the cart Continue Shopping..!</b>
+						<b>Product is already added into the cart continue shopping!</b>
 				</div>
-			";//not in video
+			";
 		} else {
 			$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
 			$run_query = mysqli_query($con,$sql);
@@ -141,16 +141,16 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 				$pro_name = $row["product_title"];
 				$pro_image = $row["product_image"];
 				$pro_price = $row["product_price"];
-			$sql = "INSERT INTO `cart` 
+			$sql = "INSERT INTO `cart`
 			(`id`, `p_id`, `ip_add`, `user_id`, `product_title`,
 			`product_image`, `qty`, `price`, `total_amt`)
-			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name', 
+			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name',
 			'$pro_image', '1', '$pro_price', '$pro_price')";
 			if(mysqli_query($con,$sql)){
 				echo "
 					<div class='alert alert-success'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is Added..!</b>
+						<b>Product: $pro_name is added!</b>
 					</div>
 				";
 			}
@@ -159,14 +159,14 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			echo "
 					<div class='alert alert-success'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Sorry..!go and Sign Up First then you can add a product to your cart</b>
+						<b>Please log in first, to be able to add products to your cart!</b>
 					</div>
 				";
 		}
-		
-		
-		
-		
+
+
+
+
 	}
 if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 	$uid = $_SESSION["uid"];
@@ -215,7 +215,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 						</div>
 				";
 			}
-				
+
 		}
 		if(isset($_POST["cart_checkout"])){
 			echo "<div class='row'>
@@ -225,12 +225,12 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 				</div>";
 		}
 		echo '
-		
+
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 				  <input type="hidden" name="cmd" value="_cart">
 				  <input type="hidden" name="business" value="shoppingcart@khanstore.com">
 				  <input type="hidden" name="upload" value="1">';
-				  
+
 				  $x=0;
 				  $uid = $_SESSION["uid"];
 				  $sql = "SELECT * FROM cart WHERE user_id = '$uid'";
@@ -241,9 +241,9 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 				  <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
 				  <input type="hidden" name="amount_'.$x.'" value="'.$row["price"].'">
 				  <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
-				  
+
 				  }
-				  
+
 				echo   '
 				<input type="hidden" name="return" value="http://www.sysc.esy.es/shoppingCart/payment_success.php"/>
 				<input type="hidden" name="cancel_return" value="http://www.sysc.esy.es/shoppingCart/cancel.php"/>
@@ -253,10 +253,10 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 					src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 					alt="PayPal - The safer, easier way to pay online">
 				</form>';
-		
-		
-		
-		
+
+
+
+
 	}
 }
 
@@ -287,8 +287,8 @@ if(isset($_POST["updateProduct"])){
 	$qty = $_POST["qty"];
 	$price = $_POST["price"];
 	$total = $_POST["total"];
-	
-	$sql = "UPDATE cart SET qty = '$qty',price='$price',total_amt='$total' 
+
+	$sql = "UPDATE cart SET qty = '$qty',price='$price',total_amt='$total'
 	WHERE user_id = '$uid' AND p_id='$pid'";
 	$run_query = mysqli_query($con,$sql);
 	if($run_query){
@@ -300,34 +300,7 @@ if(isset($_POST["updateProduct"])){
 		";
 	}
 }
+if(isset($_POST["e_msg"])){
+	echo "User does not exists! Please check your information!";
+}
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
