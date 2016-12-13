@@ -3,6 +3,9 @@ session_start();
 if(isset($_SESSION["uid"])){
 	header("location:profile.php");
 }
+if (isset($_GET["e_msg"]) && $_GET["e_msg"] == 'failed') {
+echo "Wrong Username / Password, please check your information!";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,8 +63,16 @@ if(isset($_SESSION["uid"])){
 									<input type="password" class="form-control" id="password" required/>
 									<p><br/></p>
 									<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float: right;" id="login" value="Login">
+									<br>
+									<br>
 								</div>
+								<div class="panel-footer" id="e_msg">
+									<!-- DO wrong password/username message -->
+								</div>
+<<<<<<< HEAD
 								<div class="panel-footer" id="e_msg"></div>
+=======
+>>>>>>> origin/master
 							</div>
 						</div>
 					</ul>

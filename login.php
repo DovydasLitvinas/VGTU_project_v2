@@ -15,7 +15,6 @@ if(isset($_POST["userLogin"])){
 		$_SESSION["name"] = $row["first_name"];
 			echo "truefsvkjbskvvsbd";
 		}
-
 }
 
 ?>
