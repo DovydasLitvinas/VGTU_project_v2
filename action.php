@@ -19,6 +19,9 @@ if(isset($_POST["category"])){
 		echo "</div>";
 	}
 }
+if(isset($_POST["e_msg"])){
+	echo "Wrong Username/Password, please check your information!";
+}
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
 	$run_query = mysqli_query($con,$brand_query);
@@ -73,8 +76,9 @@ if(isset($_POST["getProduct"])){
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$.$pro_price.00
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
+								<div class='panel-heading'>$ $pro_price.00
+									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
+									<button pid='$pro_id' style='float:right; margin-right: 10px;' id='product_desc' class='btn btn-success btn-xs'>Details</button>
 								</div>
 							</div>
 						</div>
@@ -109,8 +113,8 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$.$pro_price.00
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
+								<div class='panel-heading'>$ $pro_price.00
+									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
 								</div>
 							</div>
 						</div>
@@ -118,10 +122,39 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		}
 	}
 
+	/*if(isset($_POST["productDetails"])){
+		if(isset($_SESSION["pid"])){
+		$p_id = $_POST["proId"];
+		$sql = "SELECT * FROM cart WHERE p_id = '$p_id'";
+		$run_query = mysqli_query($con,$sql);
+		$count = mysqli_num_rows($run_query);
+		if(mysqli_num_rows($run_query) > 0){
+			while($row = mysqli_fetch_array($run_query)){
+				$pro_id    = $row['product_id'];
+				$pro_title = $row['product_title'];
+				$pro_price = $row['product_price'];
+				$pro_image = $row['product_image'];
+			echo "
+			";
+			}
+		}
+	}
+}
+
+DETAILS ATSPAUSDINIMAS
+
+*/
+
+
+
+
+
+
+
 	if(isset($_POST["addToProduct"])){
 
 		if(isset($_SESSION["uid"])){
-			$p_id = $_POST["proId"];
+		$p_id = $_POST["proId"];
 		$user_id = $_SESSION["uid"];
 		$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
 		$run_query = mysqli_query($con,$sql);
@@ -194,7 +227,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 					<div class='col-md-3 col-xs-3'>$no</div>
 					<div class='col-md-3 col-xs-3'><img src='product_images/$pro_image' width='60px' height='50px'></div>
 					<div class='col-md-3 col-xs-3'>$pro_name</div>
-					<div class='col-md-3 col-xs-3'>$.$pro_price.00</div>
+					<div class='col-md-3 col-xs-3'>$ $pro_price.00</div>
 				</div>
 			";
 			$no = $no + 1;
@@ -235,7 +268,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 				  $uid = $_SESSION["uid"];
 				  $sql = "SELECT * FROM cart WHERE user_id = '$uid'";
 				  $run_query = mysqli_query($con,$sql);
-				  while($row=mysqli_fetch_array($run_query)){
+				  while($row = mysqli_fetch_array($run_query)){
 					  $x++;
 				 echo  '<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
 				  <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
@@ -249,14 +282,15 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 				<input type="hidden" name="cancel_return" value="http://www.sysc.esy.es/shoppingCart/cancel.php"/>
 				<input type="hidden" name="currency_code" value="USD"/>
 				<input type="hidden" name="custom" value="'.$uid.'"/>
-				<input style="float:right;margin-right:80px;" type="image" name="submit"
+				<input style="float: right; margin-right:20px; width: 150px; height: 30px;" type="image" name="submit"
 					src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
 					alt="PayPal - The safer, easier way to pay online">
 				</form>';
 
-
-
-
+	}
+	else {
+		echo "<div class='row'><center><h4> Your cart is empty! </h4></center></div>
+		";
 	}
 }
 
@@ -299,8 +333,5 @@ if(isset($_POST["updateProduct"])){
 			</div>
 		";
 	}
-}
-if(isset($_POST["e_msg"])){
-	echo "User does not exists! Please check your information!";
 }
 ?>
