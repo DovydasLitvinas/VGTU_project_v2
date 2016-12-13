@@ -122,35 +122,6 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		}
 	}
 
-	/*if(isset($_POST["productDetails"])){
-		if(isset($_SESSION["pid"])){
-		$p_id = $_POST["proId"];
-		$sql = "SELECT * FROM cart WHERE p_id = '$p_id'";
-		$run_query = mysqli_query($con,$sql);
-		$count = mysqli_num_rows($run_query);
-		if(mysqli_num_rows($run_query) > 0){
-			while($row = mysqli_fetch_array($run_query)){
-				$pro_id    = $row['product_id'];
-				$pro_title = $row['product_title'];
-				$pro_price = $row['product_price'];
-				$pro_image = $row['product_image'];
-			echo "
-			";
-			}
-		}
-	}
-}
-
-DETAILS ATSPAUSDINIMAS
-
-*/
-
-
-
-
-
-
-
 	if(isset($_POST["addToProduct"])){
 
 		if(isset($_SESSION["uid"])){
@@ -309,7 +280,7 @@ if(isset($_POST["removeFromCart"])){
 		echo "
 			<div class='alert alert-danger'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Product is removed from Cart Continue Shopping!</b>
+				<b>Product is removed from cart continue shopping!</b>
 			</div>
 		";
 	}
@@ -329,7 +300,7 @@ if(isset($_POST["updateProduct"])){
 		echo "
 			<div class='alert alert-success'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Product is Updated Continue Shopping..!</b>
+				<b>Product is updated continue shopping!</b>
 			</div>
 		";
 	}

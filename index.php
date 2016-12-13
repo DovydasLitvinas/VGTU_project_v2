@@ -62,14 +62,13 @@ echo "Wrong Username / Password, please check your information!";
 									<label for="email">Password</label>
 									<input type="password" class="form-control" id="password" required/>
 									<p><br/></p>
-									<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float: right;" id="login" value="Login">
+									<center><input type="submit" class="btn btn-success" style = "width: 250px;" id="login" value="Login"></center>
 									<br>
 									<br>
 								</div>
-								<div class="panel-footer" id="e_msg">
-									<!-- DO wrong password/username message -->
-								</div>
-								<div class="panel-footer" id="e_msg"></div>
+							<!--	<div class="panel-footer" id="e_msg">
+									<!-- DO wrong password/username message
+								</div> -->
 							</div>
 						</div>
 					</ul>
@@ -109,6 +108,15 @@ echo "Wrong Username / Password, please check your information!";
 				</div>
 			</div>
 			<div class="col-md-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<center>
+					<ul class="pagination" id="pageno">
+						<li><a href="#">1</a></li>
+					</ul>
+				</center>
+			</div>
 		</div>
 	</div>
 </body>
