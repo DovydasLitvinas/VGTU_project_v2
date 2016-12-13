@@ -9,7 +9,7 @@ if(!isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Orders</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -20,13 +20,13 @@ if(!isset($_SESSION["uid"])){
 	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Khan Store</a>
+				<a href="#" class="navbar-brand"></a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="profile.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="profile.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span>Product</a></li>
 			</ul>
 		</div>
 	</div>
@@ -34,7 +34,7 @@ if(!isset($_SESSION["uid"])){
 	<p><br/></p>
 	<p><br/></p>
 	<div class="container-fluid">
-	
+
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
@@ -66,51 +66,3 @@ if(!isset($_SESSION["uid"])){
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

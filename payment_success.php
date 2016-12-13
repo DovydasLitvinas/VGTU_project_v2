@@ -5,11 +5,11 @@ if(!isset($_SESSION["uid"])){
 	header("location:index.php");
 }
 $trx_id = $_GET["tx"];
-$p_st = $_GET["st"];
-$amt = $_GET["amt"];
-$cc = $_GET["cc"];
-$cm = $_GET["cm"];
-$c_amt = $_COOKIE["ta"];
+//$p_st = $_GET["st"];
+//$amt = $_GET["amt"];
+//$cc = $_GET["cc"];
+//$cm = $_GET["cm"];
+//$c_amt = $_COOKIE["ta"];
 
 
 
@@ -18,7 +18,7 @@ $c_amt = $_COOKIE["ta"];
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Khan Store</title>
+		<title>Order sucessful</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -29,13 +29,13 @@ $c_amt = $_COOKIE["ta"];
 	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
+		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">Khan Store</a>
+				<a href="index.php" class="navbar-brand">E-Shop</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+				<li><a href="index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span> Home</a></li>
+				<li><a href="index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span>Product</a></li>
 			</ul>
 		</div>
 	</div>
@@ -43,17 +43,17 @@ $c_amt = $_COOKIE["ta"];
 	<p><br/></p>
 	<p><br/></p>
 	<div class="container-fluid">
-	
+
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-heading"></div>
 					<div class="panel-body">
-						<h1>Thankyou </h1>
+						<h1>Thank you.</h1>
 						<hr/>
-						<p>Hello <?php echo $_SESSION["name"]; ?>,Your payment process is 
-						successfully completed and your Transaction id is<b></b><br/>
+						<p>Hello <?php echo $_SESSION["name"]; ?>,Your payment process is
+						successfully completed and your Transaction id is <b> </b><br/>
 						you can continue your Shopping <br/></p>
 						<a href="index.php" class="btn btn-success btn-lg">Continue Shopping</a>
 					</div>
@@ -65,51 +65,3 @@ $c_amt = $_COOKIE["ta"];
 	</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
