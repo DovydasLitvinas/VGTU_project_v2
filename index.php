@@ -61,7 +61,7 @@ if(isset($_SESSION["uid"])){
 									<p><br/></p>
 									<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float: right;" id="login" value="Login">
 								</div>
-								<div class="panel-footer" id="e_msg">loool</div>
+								<div class="panel-footer" id="e_msg"></div>
 							</div>
 						</div>
 					</ul>
