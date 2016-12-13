@@ -1,7 +1,8 @@
 <?php
+<?php
 session_start();
-if(isset($_SESSION["uid"])){
-	header("location:profile.php");
+if(!isset($_SESSION["uid"])){
+	header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -24,8 +25,8 @@ if(isset($_SESSION["uid"])){
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded = "false">
-					<span class="sr-only">navigation</span>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
+					<span class="sr-only"> navigation toggle</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -40,65 +41,54 @@ if(isset($_SESSION["uid"])){
 				<li style = "top: 10px; left: 20px;"><input type = "submit" class = "btn btn-primary" id = "search_btn"></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
-					<div class="dropdown-menu" style="width:500px;">
-						<div class="panel panel-danger">
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
+					<div class="dropdown-menu" style="width:400px;">
+						<div class="panel panel-success">
 							<div class="panel-heading">
-									<center> Your cart is empty, please login to be able to add products to your cart! </center>
+								<div class="row">
+									<div class="col-md-3 col-xs-3">Sl.No</div>
+									<div class="col-md-3 col-xs-3">Product Image</div>
+									<div class="col-md-3 col-xs-3">Product Name</div>
+									<div class="col-md-3 col-xs-3">Price in $.</div>
+								</div>
 							</div>
+							<div class="panel-body">
+								<div id="cart_product">
+								</div>
+							</div>
+							<div class="panel-footer"></div>
 						</div>
+					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span> Sign In </a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span><?php echo "Hi, ".$_SESSION["name"]; ?></a>
 					<ul class="dropdown-menu">
-						<div style="width:300px;">
-							<div class="panel panel-primary">
-								<div class="panel-heading">Login</div>
-								<div class="panel-heading">
-									<label for="email">Email</label>
-									<input type="email" class="form-control" id="email" required/>
-									<label for="email">Password</label>
-									<input type="password" class="form-control" id="password" required/>
-									<p><br/></p>
-									<center><input type="submit" class="btn btn-success" style="width: 100px;" id="login" value="Login"></center></input>
-									<br>
-									<br>
-								</div>
-								<div class="panel-footer" id="e_msg">
-									<!-- DO wrong password/username message -->
-								</div>
-<<<<<<< HEAD
-								<div class="panel-footer" id="e_msg"></div>
-=======
->>>>>>> origin/master
-							</div>
-						</div>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li class="divider"></li>
+						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>
 				</li>
-				<li><a href="customer_registration.php"><span style = "right: 5px;" class = "glyphicon glyphicon-edit"></span> Sign Up </a></li>
 			</ul>
 		</div>
 	</div>
-</div>
+	</div>
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-1"></div>
-			<div class="col-md-2 col-xs-12">
+			<div class="col-md-2">
 				<div id="get_category">
-						<!-- NUSKAITOM KATEGORIJAS -->
 				</div>
 				<div id="get_brand">
-					<!-- NUSKAITOM BRANDUS -->
 				</div>
 			</div>
-			<div class="col-md-8 col-xs-12">
+			<div class="col-md-8">
 				<div class="row">
 					<div class="col-md-12 col-xs-12" id="product_msg">
 					</div>
 				</div>
-				<div class="panel panel-info">
+				<div class="panel panel-info" id="scroll">
 					<div class="panel-heading">Products</div>
 					<div class="panel-body">
 						<div id="get_product">
@@ -110,6 +100,16 @@ if(isset($_SESSION["uid"])){
 			</div>
 			<div class="col-md-1"></div>
 		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<center>
+					<ul class="pagination" id="pageno">
+						<li><a href="#">1</a></li>
+					</ul>
+				</center>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
+?>

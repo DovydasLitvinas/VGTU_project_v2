@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if(!isset($_SESSION["uid"])){
 	header("location:index.php");
@@ -31,12 +30,12 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand"> Parduotuvė </a>
+				<a href="index.php" class="navbar-brand"> E-Shop </a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class = "nav navbar-nav">
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"> Home </a></li>
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"> Products </a></li>
+        <li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span> Home </a></li>
+        <li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span> Products </a></li>
 				<li style = "width: 300px; left: 10px; top: 10px;"><input type = "text" class = "form-control" id = "search"></li>
 				<li style = "top: 10px; left: 20px;"><input type = "submit" class = "btn btn-primary" id = "search_btn"></li>
 			</ul>
@@ -54,7 +53,6 @@ if(!isset($_SESSION["uid"])){
 							</div>
 							<div class="panel-body">
 								<div id="cart_product">
-								<!-- Gaunam produktus -->
 								</div>
 							</div>
 							<div class="panel-footer"></div>
@@ -63,15 +61,11 @@ if(!isset($_SESSION["uid"])){
 				</li>
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span><?php echo "Hi, ".$_SESSION["name"]; ?></a>
 					<ul class="dropdown-menu">
-						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart">Cart</a></li>
+						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
 					</ul>
 				</li>
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 			</ul>
 		</div>
 	</div>
@@ -97,7 +91,7 @@ if(!isset($_SESSION["uid"])){
 					<div class="panel-heading">Products</div>
 					<div class="panel-body">
 						<div id="get_product">
-							<!--Here we get product jquery Ajax Request-->
+							<!--Atvaizduojami Ajax kvietimai-->
 						</div>
 					</div>
 					<div class = "panel-footer"><b><center>&copy; Dovydas Litvinas ir Ignas Šiaudkulis, 2016 VGTU</center></b></div>
