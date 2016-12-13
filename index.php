@@ -3,9 +3,6 @@ session_start();
 if(isset($_SESSION["uid"])){
 	header("location:profile.php");
 }
-if (isset($_GET["e_msg"]) && $_GET["e_msg"] == 'failed') {
-echo "Wrong Username / Password, please check your information!";
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +30,7 @@ echo "Wrong Username / Password, please check your information!";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand"> Parduotuvė </a>
+				<a href="index.php" class="navbar-brand"> E-Shop </a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class = "nav navbar-nav">
@@ -62,7 +59,7 @@ echo "Wrong Username / Password, please check your information!";
 									<label for="email">Password</label>
 									<input type="password" class="form-control" id="password" required/>
 									<p><br/></p>
-									<a href="#" style="color:white; list-style:none;">Forgotten Password</a><input type="submit" class="btn btn-success" style="float: right;" id="login" value="Login">
+									<center><input type="submit" class="btn btn-success" style="width: 100px;" id="login" value="Login"></center></input>
 									<br>
 									<br>
 								</div>
@@ -101,7 +98,7 @@ echo "Wrong Username / Password, please check your information!";
 					<div class="panel-heading">Products</div>
 					<div class="panel-body">
 						<div id="get_product">
-							<!--Here we get product jquery Ajax Request-->
+							<!--Atvaizduojami Ajax kvietimai-->
 						</div>
 					</div>
 					<div class = "panel-footer"><b><center>&copy; Dovydas Litvinas ir Ignas Šiaudkulis, 2016 VGTU</center></b></div>
