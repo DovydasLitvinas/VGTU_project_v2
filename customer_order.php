@@ -18,7 +18,7 @@ if(!isset($_SESSION["uid"])){
 			table tr td {padding:10px;}
 		</style>
 	</head>
-<body>
+<body style = "background-color: #F5ECCE;">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">

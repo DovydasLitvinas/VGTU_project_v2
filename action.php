@@ -6,7 +6,7 @@ if(isset($_POST["category"])){
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Categories</h4></a></li>
+			<li class='active'><a href='#'><h4> Categories </h4></a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -74,7 +74,7 @@ if(isset($_POST["getProduct"])){
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='product_images/$pro_image' style='width:160px; height:150px;'/>
 								</div>
 								<div class='panel-heading'>$ $pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
@@ -115,11 +115,36 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 								</div>
 								<div class='panel-heading'>$ $pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
+									<button pid='$pro_id' style='float:right; margin-right: 10px;' id='product_desc' class='btn btn-success btn-xs'>Details</button>
 								</div>
 							</div>
 						</div>
 			";
 		}
+	}
+	if(isset($_POST["productDesc"])){
+		$p_id = $_POST["proId"];
+		$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
+		$run_query = mysqli_query($con, $sql);
+		$row = mysqli_fetch_array($run_query);
+		$id = $row["product_id"];
+		$p_title = $row["product_title"];
+		$p_price = $row["product_price"];
+		$p_desc = $row["product_desc"];
+		$p_image = $row["product_image"];
+		echo " <div class='col-md-12'>
+					<div class='panel panel-info'>
+						<div class='panel-heading'>$p_title</div>
+						<div class='panel-body'>
+							<img src='product_images/$p_image' style='width:160px; height:250px;'/>
+						</div>
+						<div class='panel-heading'>$ $_price.00
+							<button pid='$p_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>
+							<button pid='$p_id' style='float:right; margin-right: 10px;' id='product_desc' class='btn btn-success btn-xs'>Details</button>
+						</div>
+					</div>
+				</div>
+	";
 	}
 
 	if(isset($_POST["addToProduct"])){

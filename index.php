@@ -23,8 +23,8 @@ echo "Wrong Username / Password, please check your information!";
 			}
 		</style>
 	</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body style = "background-color: #F5ECCE;">
+	<div style = "background-color: #0B3861;" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded = "false">
@@ -33,17 +33,17 @@ echo "Wrong Username / Password, please check your information!";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand"> E-Shop </a>
+				<a href="index.php" style = "color: white;" class="navbar-brand"> E-Shop </a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class = "nav navbar-nav">
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span> Home </a></li>
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span> Products </a></li>
+				<li><a href = "index.php" style = "color: white;"><span style = "right: 5px; color: white;" class = "glyphicon glyphicon-home"></span> Home </a></li>
+				<li><a href = "index.php" style = "color: white;"><span style = "right: 5px; color: white;" class = "glyphicon glyphicon-tags"></span> Products </a></li>
 				<li style = "width: 300px; left: 10px; top: 10px;"><input type = "text" class = "form-control" id = "search"></li>
 				<li style = "top: 10px; left: 20px;"><input type = "submit" class = "btn btn-primary" id = "search_btn"></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
 					<div class="dropdown-menu" style="width:500px;">
 						<div class="panel panel-danger">
 							<div class="panel-heading">
@@ -51,7 +51,7 @@ echo "Wrong Username / Password, please check your information!";
 							</div>
 						</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span> Sign In </a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span> Sign In </a>
 					<ul class="dropdown-menu">
 						<div style="width:300px;">
 							<div class="panel panel-primary">
@@ -73,7 +73,7 @@ echo "Wrong Username / Password, please check your information!";
 						</div>
 					</ul>
 				</li>
-				<li><a href="customer_registration.php"><span style = "right: 5px;" class = "glyphicon glyphicon-edit"></span> Sign Up </a></li>
+				<li><a href="customer_registration.php" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-edit"></span> Sign Up </a></li>
 			</ul>
 		</div>
 	</div>

@@ -95,8 +95,8 @@ $(document).ready(function(){
 				$("#signup_msg").html(data);
 			}
 		})
-
 	})
+
 	$("#login").click(function(event){
 		event.preventDefault();
 		var email = $("#email").val();
@@ -116,6 +116,20 @@ $(document).ready(function(){
 		})
 	})
 	cart_count();
+		$("body").delegate("#product_desc","click",function(event){
+		event.preventDefault();
+		var p_id = $(this).attr('pid');
+		alert(p_id);
+		$.ajax({
+			url : "action.php",
+			method: "POST",
+			data: {productDesc: 1, proId: p_id},
+			success: function(data){
+				$("#product_msg").html(data);
+			}
+		})
+	})
+	
 	$("body").delegate("#product","click",function(event){
 		event.preventDefault();
 		var p_id = $(this).attr('pid');
@@ -129,19 +143,6 @@ $(document).ready(function(){
 			}
 		})
 	})
-/*	 PRODUKTO DETAILS ISKVIETIMAS
-		$("body").delegate("#product_desc","click",function(event){
-		event.preventDefault();
-		var p_id = $(this).attr('pid');
-		$.ajax({
-			url	:	"action.php",
-			method	:	"POST",
-			data	:	{productDetails:1,proId:p_id},
-			success	:	function(data){
-				$("#product_msg").html(data);
-			}
-		})
-	})*/
 	cart_container();
 	function cart_container(){
 		$.ajax({

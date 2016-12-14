@@ -8,15 +8,15 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
 	</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body style = "background-color: #F5ECCE;">
+	<div style = "background-color: #0B3861;" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="index.php" class="navbar-brand">E-Shop</a>
+				<a href="index.php" style = "color: white;" class="navbar-brand">E-Shop</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"> Home </a></li>
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"> Products </a></li>
+				<li><a href = "index.php" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-home"> Home </a></li>
+				<li><a href = "index.php" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"> Products </a></li>
 			</ul>
 		</div>
 	</div>
@@ -98,17 +98,20 @@
 								<input type="text" id="city" name="city"class="form-control">
 							</div>
 						</div>
+						<br>
 						<div class="row">
 							<div class="col-md-12">
 								<label for="address2">Country</label>
 								<input type="text" id="country" name="country"class="form-control">
 							</div>
 						</div>
+						<br>
 						<div class="row">
 							<div class="col-md-12">
 								<label for="address2">Postal code</label>
 								<input type="text" id="postal_code" name="postal_code" class="form-control">
 							</div>
+							<br>
 						</div>
 						<p><br/></p>
 						<div class="row">
