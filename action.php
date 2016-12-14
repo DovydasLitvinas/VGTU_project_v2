@@ -74,7 +74,7 @@ if(isset($_POST["getProduct"])){
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='product_images/$pro_image' style='width:160px; height:180px;'/>
 								</div>
 								<div class='panel-heading'>$ $pro_price.00
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>Add To Cart</button>

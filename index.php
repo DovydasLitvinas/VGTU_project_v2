@@ -21,8 +21,8 @@ if(isset($_SESSION["uid"])){
 			}
 		</style>
 	</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body style = "background-color: #F5ECCE;">
+	<div style = "background-color: #0B3861;" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded = "false">
@@ -35,13 +35,13 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class = "nav navbar-nav">
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"> Home </a></li>
-				<li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"> Products </a></li>
+				<li><a href = "index.php"><span style = "color: white;" class = "glyphicon glyphicon-home"> Home </a></li>
+				<li><a href = "index.php"><span style = "color: white;" class = "glyphicon glyphicon-tags"> Products </a></li>
 				<li style = "width: 300px; left: 10px; top: 10px;"><input type = "text" class = "form-control" id = "search"></li>
 				<li style = "top: 10px; left: 20px;"><input type = "submit" class = "btn btn-primary" id = "search_btn"></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
 					<div class="dropdown-menu" style="width:500px;">
 						<div class="panel panel-danger">
 							<div class="panel-heading">
@@ -64,13 +64,7 @@ if(isset($_SESSION["uid"])){
 									<br>
 									<br>
 								</div>
-								<div class="panel-footer" id="e_msg">
-									<!-- DO wrong password/username message -->
-								</div>
-<<<<<<< HEAD
-								<div class="panel-footer" id="e_msg"></div>
-=======
->>>>>>> origin/master
+								
 							</div>
 						</div>
 					</ul>

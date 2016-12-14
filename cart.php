@@ -9,14 +9,14 @@ if(!isset($_SESSION["uid"])){
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Cart store</title>
+		<title>Cart</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<script src="js/jquery2.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="main.js"></script>
 	</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body style = "background-color: #F5ECCE;">
+	<div style = "background-color: #0B3861;" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -25,12 +25,12 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand">E-Shop</a>
+				<a href="index.php" class="navbar-brand" style = "color: white;">E-Shop</a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span style = "right: 10px;" class = "glyphicon glyphicon-home"></span>Home </a></li>
-				<li><a href="index.php"><span style = "right: 10px;" class = "glyphicon glyphicon-tags"></span>Product</a></li>
+				<li><a href="index.php" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span>Home</a></li>
+				<li><a href="index.php" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span>Product</a></li>
 			</ul>
 		</div>
 	</div>
@@ -63,10 +63,8 @@ if(!isset($_SESSION["uid"])){
 						<br>
 						<br>
 						<div id="cart_checkout"></div>
-						<!-- Cart informacija atvaizduojama-->
 						</div>
 					</div>
-					<div class="panel-footer"></div>
 				</div>
 			</div>
 			<div class="col-md-2"></div>

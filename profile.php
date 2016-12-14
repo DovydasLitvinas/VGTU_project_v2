@@ -20,8 +20,8 @@ if(!isset($_SESSION["uid"])){
 			}
 		</style>
 	</head>
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+<body style = "background-color: #F5ECCE;">
+	<div style = "background-color: #0B3861;" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
@@ -30,17 +30,17 @@ if(!isset($_SESSION["uid"])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.php" class="navbar-brand"> E-Shop </a>
+				<a href="index.php" style = "color: white;" class="navbar-brand"> E-Shop </a>
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class = "nav navbar-nav">
-        <li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-home"></span> Home </a></li>
-        <li><a href = "index.php"><span style = "right: 5px;" class = "glyphicon glyphicon-tags"></span> Products </a></li>
+        <li><a href = "index.php"><span style = "color: white;" class = "glyphicon glyphicon-home"></span> Home </a></li>
+        <li><a href = "index.php"><span style = "color: white;" class = "glyphicon glyphicon-tags"></span> Products </a></li>
 				<li style = "width: 300px; left: 10px; top: 10px;"><input type = "text" class = "form-control" id = "search"></li>
 				<li style = "top: 10px; left: 20px;"><input type = "submit" class = "btn btn-primary" id = "search_btn"></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
+				<li><a href="#" id="cart_container" class="dropdown-toggle" data-toggle="dropdown"><span style = "color: white;" class = "glyphicon glyphicon-shopping-cart"></span> My Cart <span class = "badge"> 0 </span></a>
 					<div class="dropdown-menu" style="width:400px;">
 						<div class="panel panel-success">
 							<div class="panel-heading">
@@ -53,13 +53,14 @@ if(!isset($_SESSION["uid"])){
 							</div>
 							<div class="panel-body">
 								<div id="cart_product">
+							<!-- Gaunam produktus -->
 								</div>
 							</div>
 							<div class="panel-footer"></div>
 						</div>
 					</div>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span><?php echo "Hi, ".$_SESSION["name"]; ?></a>
+				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" style = "color: white;"><span style = "right: 5px;" class = "glyphicon glyphicon-user"></span><?php echo "Hi, ".$_SESSION["name"]; ?></a>
 					<ul class="dropdown-menu">
 						<li><a href="cart.php" style="text-decoration:none; color:blue;"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 						<li class="divider"></li>
