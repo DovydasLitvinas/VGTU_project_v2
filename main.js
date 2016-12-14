@@ -100,7 +100,6 @@ $(document).ready(function(){
 	$("#login").click(function(event){
 		event.preventDefault();
 		var email = $("#customer_email").val();
-		window.alert(email);
 		var pass = $("#customer_pass").val();
 		$.ajax({
 			url	:	"login.php",
@@ -109,9 +108,11 @@ $(document).ready(function(){
 			success	:function(data){
 				if(data == "truefsvkjbskvvsbd"){
 					window.location.href = "profile.php";
+					
 				}
 				else {
 					$("#e_msg").html(data);
+					window.alert('Incorect email or password');
 				}
 			}
 		})
