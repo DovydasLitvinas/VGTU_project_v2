@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION["uid"])){
 	header("location:profile.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,9 +56,9 @@ if(isset($_SESSION["uid"])){
 								<div class="panel-heading">Login</div>
 								<div class="panel-heading">
 									<label for="email">Email</label>
-									<input type="email" class="form-control" id="email" required/>
+									<input type="email" class="form-control" id="customer_email" required/>
 									<label for="email">Password</label>
-									<input type="password" class="form-control" id="password" required/>
+									<input type="password" class="form-control" id="customer_pass" required/>
 									<p><br/></p>
 									<center><input type="submit" class="btn btn-success" style="width: 100px;" id="login" value="Login"></center></input>
 									<br>

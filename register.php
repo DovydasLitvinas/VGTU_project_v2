@@ -2,24 +2,21 @@
 
 include "db.php";
 
-$f_name = $_POST["f_name"];
-$l_name = $_POST["l_name"];
+$f_name = $_POST["name"];
 $email = $_POST['email'];
-$password = $_POST['password'];
-$repassword = $_POST['repassword'];
-$mobile = $_POST['mobile'];
-$address1 = $_POST['address1'];
-$address2 = $_POST['address2'];
-$city = $_POST['city'];
-$country = $_POST['country'];
-$postal_code = $_POST['postal_code'];
+$password = $_POST['c_password'];
+$repassword = $_POST['c_repassword'];
+$country = $_POST['c_country'];
+$city = $_POST['c_city'];
+$address = $_POST['c_address'];
+$mobile = $_POST['c_contact'];
 $name = "/^[A-Z][a-zA-Z ]+$/";
 $emailValidation = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$/";
 $number = "/^[0-9]+$/";
 $p_number = "/[0-9]/";
 
-if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empty($repassword) ||
-	empty($mobile) || empty($address1) || empty($address2) || empty($city) || empty($country)|| empty($postal_code)){
+if(empty($f_name)  || empty($email) || empty($password) || empty($repassword) ||
+	empty($mobile) || empty($address) || empty($city) || empty($country) ){
 
 		echo "
 			<div class='alert alert-warning'>
@@ -37,15 +34,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	}
-	if(!preg_match($name,$l_name)){
-		echo "
-			<div class='alert alert-warning'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>this $l_name is not valid..!</b>
-			</div>
-		";
-		exit();
-	}
+
 	if(!preg_match($emailValidation,$email)){
 		echo "
 			<div class='alert alert-warning'>
@@ -90,16 +79,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	}
-	if(!strlen($postal_code) >= 4){
-		echo "
-			<div class='alert alert-warning'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Postal code has to have atleast 4 digits!</b>
-			</div>
-		";
-		exit();
-	}
-	$sql = "SELECT user_id FROM user_info WHERE email = '$email' LIMIT 1" ;
+	$sql = "SELECT user_id FROM customers WHERE email = '$email' LIMIT 1" ;
 	$check_query = mysqli_query($con,$sql);
 	$count_email = mysqli_num_rows($check_query);
 	if($count_email > 0){
@@ -112,11 +92,11 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		exit();
 	} else {
 		$password = md5($password);
-		$sql = "INSERT INTO `user_info`
-		(`user_id`, `first_name`, `last_name`, `email`,
-		`password`, `mobile`, `address1`, `address2`, `city`, `country`, `postal_code`)
-		VALUES (NULL, '$f_name', '$l_name', '$email',
-		'$password', '$mobile', '$address1', '$address2', '$city', '$country', '$postal_code')";
+		$sql = "INSERT INTO `customers`
+		(`customer_id`, `customer_name`, `customer_email`, `customer_pass`,
+		`customer_country`, `customer_city`, `customer_contact`, `customer_address`)
+		VALUES (NULL, '$f_name', '$email','$password', '$country', 
+		'$city', '$address','$mobile')";
 		$run_query = mysqli_query($con, $sql);
 		if($run_query){
 			echo "
