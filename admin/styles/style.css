@@ -27,7 +27,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {background:skyblue;}
+body {background:#F5ECCE;}
 
 .main_wrapper{
 width:1000px;
@@ -46,7 +46,6 @@ margin:auto;
 #left{
 width:795px;
 height:800px;
-background-image:url(../images/bg-body.gif); 
 float:left;
 }
 #right {
@@ -67,9 +66,16 @@ padding:6px;
 margin:6px;
 display:block;
 }
-#right a:hover {text-decoration:underline; font-weight:bolder; color:orange;}
+a:hover {font-weight:bolder; color:orange;}
 
+a {
 
+text-decoration:none;
+color: black;
+		
+}
+
+	
 
 
 

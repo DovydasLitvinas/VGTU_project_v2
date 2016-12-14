@@ -57,7 +57,7 @@ if(isset($_GET['edit_pro'])){
 
 	<form action="" method="post" enctype="multipart/form-data"> 
 		
-		<table align="center" width="795" border="2" bgcolor="#187eae">
+		<table align="center" width="1000" border="2" bgcolor="#187eae">
 			
 			<tr align="center">
 				<td colspan="7"><h2>Edit & Update Product</h2></td>

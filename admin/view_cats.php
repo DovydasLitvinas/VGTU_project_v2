@@ -1,12 +1,12 @@
 
-<table width="795" align="center" bgcolor="pink"> 
+<table width="1000" align="center" bgcolor="grey " style="color:white;"> 
 
 	
 	<tr align="center">
 		<td colspan="6"><h2>View All Categories Here</h2></td>
 	</tr>
 	
-	<tr align="center" bgcolor="skyblue">
+	<tr align="center" bgcolor="black" style="color:white;">
 		<th>Category ID</th>
 		<th>Category Title</th>
 		<th>Edit</th>

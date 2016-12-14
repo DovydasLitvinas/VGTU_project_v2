@@ -13,7 +13,7 @@ else {
 
 <html>
 	<head>
-		<title>This is Admin Panel</title> 
+		<title>Admin Panel</title> 
 		
 	<link rel="stylesheet" href="styles/style.css" media="all" /> 
 	</head>
@@ -26,19 +26,25 @@ else {
 	
 		<div id="header"></div>
 		
-		<div id="right">
-		<h2 style="text-align:center;">Manage Content</h2>
-			
-			<a href="index.php?insert_product">Insert New Product</a>
-			<a href="index.php?view_products">View All Products</a>
-			<a href="index.php?insert_cat">Insert New Category</a>
-			<a href="index.php?view_cats">View All Categories</a>
-			<a href="index.php?insert_brand">Insert New Brand</a>
-			<a href="index.php?view_brands">View All Brands</a>
-			<a href="index.php?view_customers">View Customers</a>
-			<a href="index.php?view_orders">View Orders</a>
-			<a href="index.php?view_payments">View Payments</a>
-			<a href="logout.php">Admin Logout</a>
+		<div>
+		<h1 style="text-align:center;"><a href="index.php" style="color:black; text-decoration:none;">Menu<a/></h1>
+			<table style="width:100%; text-align:center;">
+			<tr><th><a href="index.php?insert_product">Insert New Product</a></th>
+			<th><a href="index.php?view_products">View All Products</a></tr>
+			</table>
+			<table style="width:100%; text-align:center;">
+			<tr><th><a href="index.php?insert_cat">Insert New Category</a></th>
+			<th><a href="index.php?view_cats">View All Categories</a></tr>
+			</table>
+			<table style="width:100%;text-align:center;">
+			<tr><th><a href="index.php?insert_brand">Insert New Brand</a></th>
+			<th><a href="index.php?view_brands">View All Brands</a></tr>
+			</table>
+			<table style="width:100%;text-align:center;">
+			<tr><th><a href="index.php?view_customers">View Customers</a></th>
+			<th><a href="logout.php">Admin Logout</a></tr>
+			</table>
+
 		
 		</div>
 		
